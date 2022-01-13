@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:48:52 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/12 18:43:45 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/13 12:38:24 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,31 @@ char	**get_numbers(char **av)
 	}
 	free(str);
 	return (params);
-	
 }
 
 
 
 int main(int ac, char **av)
 {
-	printf("%d", ft_atoi("-21474836488"));
-	return (0);
+	if (ac > 1)
+	{
+		t_stack	*stack_a;
+		t_stack	*stack_b;
+		t_stack *tmp;
+		char **params = get_numbers(av);
+		push_elements(&stack_a, params);
+		tmp = stack_a;
+		while (tmp)
+		{
+			printf("%d ", tmp->number);
+			tmp = tmp->next;
+		}
+		swap_a(&stack_a);
+		tmp = stack_a;
+		while (tmp)
+		{
+			printf("%d ", tmp->number);
+			tmp = tmp->next;
+		}
+	}
 }

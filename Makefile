@@ -40,7 +40,9 @@ SRCS = ft_atoi.c \
        ft_striteri.c \
        get_next_line.c \
        get_next_line_utils.c \
-       parse_numbers.c
+       parse_numbers.c \
+       stack_operations.c \
+       instructions.c \
 
 OBJS = srcs/libft/ft_atoi.o \
        srcs/libft/ft_bzero.o \
@@ -78,7 +80,9 @@ OBJS = srcs/libft/ft_atoi.o \
        srcs/libft/ft_striteri.o \
        srcs/libft/get_next_line.o \
        srcs/libft/get_next_line_utils.o \
-       srcs/parse_numbers.o
+       srcs/parse_numbers.o \
+       srcs/stack_operations.o \
+       srcs/instructions.o \
 
 RM = rm -rf
 

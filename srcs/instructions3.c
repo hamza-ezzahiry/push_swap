@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   instructions3.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 13:18:52 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 10:50:41 by aysarrar         ###   ########.fr       */
+/*   Created: 2022/01/13 12:58:26 by aysarrar          #+#    #+#             */
+/*   Updated: 2022/01/13 12:58:44 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
-
-t_stack	*ft_lstlast(t_stack *lst)
+#include "../includes/libft.h"
+void	reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
-
-	if (!lst)
-		return (NULL);
-	else
-	{
-		tmp = lst;
-		while (tmp->next != NULL)
-			tmp = tmp->next;
-		return (tmp);
-	}
-	return (NULL);
+	reverse_rotate_a(stack_a);
+	reverse_rotate_b(stack_b);
 }

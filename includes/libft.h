@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:29 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/12 18:40:45 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/13 13:00:28 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_stack
 	struct s_stack	*next;	
 }	t_stack;
 
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
@@ -69,4 +69,22 @@ void	handle_errors(void);
 int		check_numbers(char **av);
 int		ft_str_check_numbers(char *str);
 char	*join_strings(char **av);
+t_stack	*new_node(int number);
+int		push(t_stack **stack, int number);
+int		insert_first(t_stack **stack, int number);
+void	push_elements(t_stack **stack, char **av);
+int		check_number(t_stack **stack, int number);
+void	free_and_exit(t_stack **stack);
+int		free_stack(t_stack **stack);
+void	swap_a(t_stack **stack_a);
+void	swap_b(t_stack **stack_b);
+void	swap_ab(t_stack **stack_a, t_stack **stack_b);
+void	push_a(t_stack **stack_a, t_stack **stack_b);
+void	push_b(t_stack **stack_a, t_stack **stack_b);
+void	rotate_a(t_stack **stack_a);
+void	rotate_b(t_stack **stack_b);
+void	rotate_ab(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_a(t_stack **stack_a);
+void	reverse_rotate_b(t_stack **stack_b);
+void	reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b);
 #endif

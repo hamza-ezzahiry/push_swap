@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:17:32 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/12 18:44:38 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:40:46 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_isspace(int c)
 	return ((c >= '\t' && c <= '\r') || (c == ' '));
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
 	long	nb;
 	int		sign;
@@ -40,7 +40,5 @@ int	ft_atoi(const char *nptr)
 		nb = nb * 10 + (nptr[index] - '0');
 		index++;
 	}
-	if (nb > 2147483647 || nb < -2147483648)
-		return (0);
 	return (nb * sign);
 }

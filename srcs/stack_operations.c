@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 10:55:46 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 12:48:53 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/13 13:06:17 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,14 @@ void	push_elements(t_stack **stack, char **av)
 	}
 	else
 		handle_errors();
+}
+
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		ft_putnbr_fd(stack->number, 1);
+		ft_putchar_fd('\n', 1);
+		stack = stack->next;
+	}
 }

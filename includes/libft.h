@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:29 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 13:00:28 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/13 13:05:45 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,6 @@ void	rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_a(t_stack **stack_a);
 void	reverse_rotate_b(t_stack **stack_b);
 void	reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b);
+int 	pop(t_stack **stack);
+void	print_stack(t_stack *stack);
 #endif

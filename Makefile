@@ -43,6 +43,8 @@ SRCS = ft_atoi.c \
        parse_numbers.c \
        stack_operations.c \
        instructions.c \
+       instructions2.c \
+       instructions3.c \
 
 OBJS = srcs/libft/ft_atoi.o \
        srcs/libft/ft_bzero.o \
@@ -83,6 +85,9 @@ OBJS = srcs/libft/ft_atoi.o \
        srcs/parse_numbers.o \
        srcs/stack_operations.o \
        srcs/instructions.o \
+       srcs/instructions2.o \
+       srcs/instructions3.o \
+
 
 RM = rm -rf
 

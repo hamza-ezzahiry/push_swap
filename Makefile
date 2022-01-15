@@ -45,6 +45,7 @@ SRCS = ft_atoi.c \
        instructions.c \
        instructions2.c \
        instructions3.c \
+       sort.c
 
 OBJS = srcs/libft/ft_atoi.o \
        srcs/libft/ft_bzero.o \
@@ -87,6 +88,7 @@ OBJS = srcs/libft/ft_atoi.o \
        srcs/instructions.o \
        srcs/instructions2.o \
        srcs/instructions3.o \
+       srcs/sort.o
 
 
 RM = rm -rf

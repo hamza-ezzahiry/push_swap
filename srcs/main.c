@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:48:52 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 13:19:55 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:04:10 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ int main(int ac, char **av)
 		char	**numbers;
 
 		numbers = get_numbers(av);
-		push_elements(&stack_a, numbers);
-		push_b(&stack_a, &stack_b);
-		push_a(&stack_a, &stack_b);
-		print_stack(stack_a);
-		print_stack(stack_b);
+		push_elements(&stack_a, numbers, ac);
+		free_2d(numbers);
+		if (check_sorted(&stack_a))
+		{
+			free_stack(&stack_a);
+			return (0);
+		}
 	}
 }

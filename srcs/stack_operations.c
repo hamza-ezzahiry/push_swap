@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 10:55:46 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 13:06:17 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:03:24 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,15 @@ int pop(t_stack **stack)
 	return (1);
 }
 
-void	push_elements(t_stack **stack, char **av)
+void	push_elements(t_stack **stack, char **av, int ac)
 {
 	long	number;
 	int		index;
 
-	index = 0;
+	index = ac - 2;
 	if (check_numbers(av))
 	{
-		while (av[index])
+		while (index >= 0)
 		{
 			number = ft_atoi(av[index]);
 			if (number < -2147483648 || number > 2147483647)
@@ -109,7 +109,7 @@ void	push_elements(t_stack **stack, char **av)
 				free_and_exit(stack);
 			if (!insert_first(stack, ft_atoi(av[index])))
 				free_and_exit(stack);
-			index++;
+			index--;
 		}
 	}
 	else
@@ -124,4 +124,23 @@ void	print_stack(t_stack *stack)
 		ft_putchar_fd('\n', 1);
 		stack = stack->next;
 	}
+}
+
+void	remove_last(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack || !*stack)
+		return ;
+	if (!(*stack)->next)
+	{
+		free(*stack);
+		*stack = NULL;
+		return ;
+	}
+	tmp = *stack;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	free(tmp->next);
+	tmp->next = NULL;
 }

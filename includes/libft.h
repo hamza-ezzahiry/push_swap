@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:29 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/15 13:57:26 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:22:39 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*join_strings(char **av);
 t_stack	*new_node(int number);
 int		push(t_stack **stack, int number);
 int		insert_first(t_stack **stack, int number);
-void	push_elements(t_stack **stack, char **av, int ac);
+void	push_elements(t_stack **stack, char **av);
 int		check_number(t_stack **stack, int number);
 void	free_and_exit(t_stack **stack);
 int		free_stack(t_stack **stack);
@@ -91,4 +91,5 @@ int 	pop(t_stack **stack);
 void	print_stack(t_stack *stack);
 void	remove_last(t_stack **stack);
 int		check_sorted(t_stack **stack_a);
+int		numbers_len(char **numbers);
 #endif

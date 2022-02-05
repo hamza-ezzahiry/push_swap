@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 10:55:46 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/15 14:03:24 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:22:32 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,12 @@ int pop(t_stack **stack)
 	return (1);
 }
 
-void	push_elements(t_stack **stack, char **av, int ac)
+void	push_elements(t_stack **stack, char **av)
 {
 	long	number;
 	int		index;
 
-	index = ac - 2;
+	index = numbers_len(av) - 1;
 	if (check_numbers(av))
 	{
 		while (index >= 0)
@@ -143,4 +143,14 @@ void	remove_last(t_stack **stack)
 		tmp = tmp->next;
 	free(tmp->next);
 	tmp->next = NULL;
+}
+
+int	numbers_len(char **numbers)
+{
+	int		i;
+
+	i = 0;
+	while (numbers[i])
+		i++;
+	return (i);
 }

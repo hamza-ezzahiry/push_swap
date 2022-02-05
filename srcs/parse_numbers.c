@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:56:08 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 12:00:08 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:38:23 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,13 @@ int	ft_str_check_numbers(char *str)
 	index = 0;
 	while (str[index])
 	{
-		if (!ft_isdigit(str[index]))
+		if (str[index] == '-' || str[index] == '+')
+		{
+			index++;
+			if (!ft_isdigit(str[index]))
+				return (0);	
+		}
+		else if (!ft_isdigit(str[index]))
 			return (0);
 		index++;
 	}

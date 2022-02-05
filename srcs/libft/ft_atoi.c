@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:17:32 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 10:40:46 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:35:38 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ long	ft_atoi(const char *nptr)
 	nb = 0;
 	sign = 1;
 	index = 0;
+	if (ft_str_check_numbers((char *)nptr) == 0)
+		handle_errors();
 	while (ft_isspace(nptr[index]))
 		index++;
 	if (nptr[index] == '-')

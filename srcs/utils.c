@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:49:54 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/13 12:30:49 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/01/15 14:16:32 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	handle_errors(void)
 {
 	ft_putendl_fd("Error", 1);
-	exit(0);
+	exit(1);
 }
 
 void	*free_2d(char **tab)

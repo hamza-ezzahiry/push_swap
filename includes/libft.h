@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:29 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/01/15 14:22:39 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/08 11:23:17 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,6 @@ void	print_stack(t_stack *stack);
 void	remove_last(t_stack **stack);
 int		check_sorted(t_stack **stack_a);
 int		numbers_len(char **numbers);
+int		ft_lstsize(t_stack *lst);
+void	check_sort(t_stack **stack_a);
 #endif

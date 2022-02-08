@@ -38,6 +38,7 @@ SRCS = ft_atoi.c \
        ft_tolower.c \
        ft_toupper.c \
        ft_striteri.c \
+       ft_lstsize.c \
        get_next_line.c \
        get_next_line_utils.c \
        parse_numbers.c \
@@ -88,7 +89,8 @@ OBJS = srcs/libft/ft_atoi.o \
        srcs/instructions.o \
        srcs/instructions2.o \
        srcs/instructions3.o \
-       srcs/sort.o
+       srcs/sort.o \
+       srcs/libft/ft_lstsize.o
 
 
 RM = rm -rf

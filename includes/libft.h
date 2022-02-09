@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:29 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/02/08 11:23:17 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/09 14:41:05 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,8 @@ void	remove_last(t_stack **stack);
 int		check_sorted(t_stack **stack_a);
 int		numbers_len(char **numbers);
 int		ft_lstsize(t_stack *lst);
-void	check_sort(t_stack **stack_a);
+int		check_sort(t_stack **stack_a);
+int		get_smallest_number(t_stack *stack_a);
+int		get_index(t_stack *stack_a, int number);
+void	sort(t_stack **stack_a, t_stack **stack_b);
 #endif

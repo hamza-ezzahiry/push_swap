@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:48:52 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/02/08 11:23:01 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/09 13:58:05 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,16 @@ char	**get_numbers(char **av)
 	return (params);
 }
 
-void	check_sort(t_stack **stack_a)
+int	check_sort(t_stack **stack_a)
 {
 	if (check_sorted(stack_a))
 	{
 		free_stack(stack_a);
-		exit(1);
+		return (1);
 	}
+	return (0);
 }
+
 
 int main(int ac, char **av)
 {
@@ -49,6 +51,9 @@ int main(int ac, char **av)
 		
 		numbers = get_numbers(av);
 		push_elements(&stack_a, numbers);
-		check_sort(&stack_a);
+		if (check_sort(&stack_a))
+			return (0);
+		sort(&stack_a);
 	}
+	return (0);
 }

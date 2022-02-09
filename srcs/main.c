@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:48:52 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/02/09 13:58:05 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:45:45 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int main(int ac, char **av)
 		push_elements(&stack_a, numbers);
 		if (check_sort(&stack_a))
 			return (0);
-		sort(&stack_a);
+		sort(&stack_a, &stack_b);
+		//print_stack(stack_a);
 	}
 	return (0);
 }

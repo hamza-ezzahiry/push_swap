@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:11:54 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/02/09 14:58:45 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:46:05 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,52 @@ static void	sort_three(t_stack **stack_a)
 	}
 }
 
-static void	push_smallest_two(t_stack **stack_a, t_stack **stack_b)
+static void	ra_or_rra(int index, int jndex, t_stack **stack_a)
 {
-	int	smallest;
-	int	jndex;
-	int	index;
-
-	smallest = get_smallest_number(stack_a);
-	index = get_index(stack_a, smallest);
-	
-	
+	if (jndex > index)
+	{
+		rotate_a(stack_a);
+		ft_putendl_fd("ra", 1);
+	}
+	else
+	{
+		reverse_rotate_a(stack_a);
+		ft_putendl_fd("rra", 1);
+	}
 }
 
-static void	sort_five(t_stack **stack_a, t_stack **stack_b)
+static void	push_smallest(t_stack **stack_a, t_stack **stack_b)
 {
-	int	smallest;
+	t_stack	*tmp;
+	int		smallest;
+	int		jndex;
+	int		index;
 
-	
+	smallest = get_smallest_number(*stack_a);
+	jndex = ft_lstsize(*stack_a) / 2;
+	tmp = *stack_a;
+	while (tmp->number != smallest)
+	{
+		index = get_index(*stack_a, smallest);
+		ra_or_rra(index, jndex, stack_a);
+		tmp = *stack_a;
+	}
+	if (check_sorted(stack_a))
+		return ;
+	push_b(stack_a, stack_b);
+	ft_putendl_fd("pb", 1);
+}
+
+static void	sort_lessten(t_stack **stack_a, t_stack **stack_b)
+{
+	while (ft_lstsize(*stack_a) != 3 && !check_sorted(stack_a))
+		push_smallest(stack_a, stack_b);
+	sort_three(stack_a);
+	while (ft_lstsize(*stack_b) != 0)
+	{
+		push_a(stack_a, stack_b);
+		ft_putendl_fd("pa", 1);
+	}
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
@@ -78,6 +107,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_three(stack_a);
-	else if (ft_lstsize(*stack_a) == 5)
-		sort_five(stack_a, stack_b);
+	else if (ft_lstsize(*stack_a) <= 9)
+		sort_lessten(stack_a, stack_b);
 }

@@ -6,27 +6,11 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:11:54 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/02/09 17:23:24 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:47:22 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
-int	check_sorted(t_stack **stack_a)
-{
-	t_stack	*tmp;
-
-	if (!stack_a)
-		return (0);
-	tmp = *stack_a;
-	while (tmp->next)
-	{
-		if (tmp->number > tmp->next->number)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
 
 static void	sort_three(t_stack **stack_a)
 {

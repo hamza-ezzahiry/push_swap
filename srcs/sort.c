@@ -6,7 +6,7 @@
 /*   By: aysarrar <aysarrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:11:54 by aysarrar          #+#    #+#             */
-/*   Updated: 2022/02/09 16:46:05 by aysarrar         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:54:34 by aysarrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,8 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_lstsize(*stack_a) == 2)
 	{
-		if (!check_sorted(stack_a))
-		{
-			swap_a(stack_a);
-			ft_putendl_fd("sa", 1);
-		}
+		swap_a(stack_a);
+		ft_putendl_fd("sa", 1);
 	}
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_three(stack_a);
